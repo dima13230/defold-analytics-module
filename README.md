@@ -25,6 +25,7 @@ Parameters of the `init`:
 
 After this you can call other functions of this module:
 
+---
 ```lua
 analytics.add_event(name, level_number, [payload])
 ```
@@ -34,7 +35,7 @@ Parameters of the `add_event`:
 - `name` (string) - Name of the event. Required parameter.
 - `level_number` (number) - Player level. Required parameter.
 - `payload` (table) - The event payload i.e. any custom data to be sent to the server.
-
+---
 
 ```lua
 analytics.set_device_language(value)
@@ -43,6 +44,7 @@ analytics.set_device_language(value)
 Parameters of the `set_device_language`:
 
 - `value` (string) - Current language. For example ru-RU.
+---
 
 Here's an example of using this module:
 
