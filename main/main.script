@@ -1,0 +1,19 @@
+local analytics = require("analytics/analytics")
+
+-- Each heartbeat counts as a new level (for testing)
+local heartbeat_counter = 1
+
+function init(self)
+	analytics.init("http://www.my.server/")
+
+	analytics.add_event("install_event", 1)
+	analytics.set_device_language("ru-RU")
+
+	analytics.add_event("heartbeat_event", 1)
+	timer.delay(60, true, heartbeat_timer_callback)
+end
+
+function heartbeat_timer_callback(self, handle, time_elapsed)
+	heartbeat_counter = heartbeat_counter + 1
+	analytics.add_event("heartbeat_event", heartbeat_counter)
+end

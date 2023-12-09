@@ -1,0 +1,51 @@
+- name: analytics
+  type: table
+  desc: A module to send analytical data from client to server.
+  members:
+  - name: init
+    type: function
+    desc: Initialize analytics module.
+    parameters:
+  - name: server_url
+    type: string
+    desc: URL of the server. Required parameter.
+  - name: device_language
+    type: string
+    desc: Current language of the app. Default value is en-US.
+  - name: packet_send_period_secs
+    type: number
+    desc: Period in seconds after which to send the packet. Default value is 5.
+  - name: buffer_size_to_send
+    type: number
+    desc: When the amount of events is equal or exceeds this value, packets are automatically sent. Default value is 3.
+  - name: update_session_id_after_mins
+    type: number
+    desc: session_id will be updated when the app is in background for more minutes than this number is. Default value is 5.
+  - name: max_send_attempts
+    type: number
+    desc: Maximum number of attempts to send an event after which it will be discarded. Set to 0 or lower to attempt to send the events indefinitely. Default value is 5.
+  - name: request_timeout
+    type: number
+    desc: HTTP request timeout. Default value is 5.
+
+  - name: add_event
+    type: function
+    desc: Add an event to the packet buffer.
+  parameters:
+  - name: name
+    type: string
+    desc: Name of the event. Same as event_name in the sent packet.
+  - name: level_number
+    type: number
+    desc: Player level number.
+  - name: payload
+    type: table
+    desc: The event payload i.e. any custom data to be sent to the server.
+
+  - name: set_device_language
+    type: function
+    desc: Sets device_language to the specified value.
+    parameters:
+  - name: value
+    type: string
+    desc: Current language. For example ru-RU.
