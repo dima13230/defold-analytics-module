@@ -40,8 +40,8 @@ local function server_callback(self, _, response)
 		for i, event in pairs(sent_events) do
 			table.insert(packet_buffer, event)
 		end
-		sent_events = {}
 	end
+	sent_events = {}
 	request_in_progress = false
 end
 
