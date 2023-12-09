@@ -7,7 +7,7 @@
 To start using this module in your script you have to require it and then initialize it:
 
 ```lua
-local analytics = require("analytics/analytics")
+local analytics = require("analytics.analytics")
 
 
 analytics.init(server_url, [device_language], [packet_send_period_secs], [buffer_size_to_send], [update_session_id_after_mins], [max_send_attempts], [request_timeout])
