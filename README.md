@@ -21,7 +21,7 @@ Parameters of the `init`:
 - `buffer_size_to_send` (number) - When the amount of events is equal or exceeds this value, packets are automatically sent. Default value is 3.
 - `update_session_id_after_mins` (number) - `session_id` will be updated when the app is in background for more minutes than this number is and then opened. Default value is 5.
 - `max_send_attempts` (number) - Maximum number of attempts to send an event after which it will be discarded. Set to 0 or lower to attempt to send the events indefinitely. Default value is 5.
-- `request_timeout` (number) - HTTP request timeout. Default value is 5.
+- `request_timeout` (number) - HTTP request timeout in seconds. Default value is 5.
 
 After this you can call other functions of this module:
 
